@@ -4,11 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link type="style/css" rel="stylesheet" href="./assets/reset.css"/>
-    <link type="style/css" rel="stylesheet" href="./assets/style.css"/>
+    <link rel="stylesheet" href="./assets/reset.css"/>
+    <link rel="stylesheet" href="./assets/style.css"/>
 </head>
 <body>
-    
+    <header>
+        <div id="highscoreLink">
+            <a href="./pages/highscore.html">High Scores</a>
+        </div>
+        <div id="timerDiv">
+            Time: <span id="timer"></span>
+        </div>
+    </header>
+    <main>
+        <section id="intro">
+            <h1>
+                Coding Quiz Challenge
+            </h1>
+            <p>
+                Try to answer the following JavaScript related questions. You 
+                will have 90 seconds to complete the quiz.  If you answer incorrectly,
+                you will lose 10 seconds on the clock.  When you complete the quiz, 
+                the time you have left will be your final score. See if you can get the high score!
+                Click the button to start the quiz when you are ready.  
+            </p>
+            <button id="quizStart">Start Quiz!</button>
+        </section>
+
+        <section id="quiz-questions">
+            <h1>Some Question</h1>
+            <section id="answer-container">
+                <button id="answer1"> some answer</button>
+                <button id="answer2"> some answer</button>
+                <button id="answer3"> some answer</button>
+                <button id="answer4"> some answer</button>
+            </section>
+        </section>
+
+        <section id="finalScore">
+            <h1>All Done!</h1>
+            <h3>Your final score is <span id="yourScore"></span></h3>
+            <form id="inputInitials">
+                <p>Input Your Initials: <input type="text"></input></p>
+                <button id="submitScore">Submit</button>
+            </form>
+            <section>
+                <button id="goBack">Go Back</button>
+                <button id="toScores">See Scores</button>
+            </section>
+        </section>
+    </main>
     <script src="./assets/script.js"></script>
 </body>
 </html>

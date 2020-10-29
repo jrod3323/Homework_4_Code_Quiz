@@ -1,0 +1,124 @@
+:root {
+    --background-color: blueviolet;
+    --buttonTextColor:white ;
+
+}
+
+html{
+    font-size: 62.5%;
+}
+/* CSS for the header */
+
+header{
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+
+#highscoreLink {
+    float:left;
+}
+
+#timerDiv{
+    float:right;
+}
+
+button{
+    background-color: var(--background-color);
+    color:var(--buttonTextColor);
+    width: fit-content;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+/* CSS for the main section */
+
+main{
+    clear:both;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CSS for pre-quiz intro */
+
+#intro {
+    padding: 1rem;
+}
+#intro h1{
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+#intro p{
+    font-size: 2rem;
+    font-style: italic;
+    padding-bottom: 1rem;
+}
+
+#answer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* CSS for Quiz Questions */
+
+#quiz-questions {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+#quiz-questions h1{
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+#answer-container button {
+    margin: .5rem;
+
+}
+/* CSS for High Score Submission */
+
+#finalScore{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+#finalScore h3{
+    font-size: 2.5rem;
+    margin: 1rem;
+}
+#inputInitials {
+    display: flex;
+    margin: 1rem;
+}
+
+#inputInitials p{
+    font-size: 1.75rem;
+}
+#inputInitials p input{
+    margin: .5rem;
+}
+
+#finalScore section{
+    margin: 1rem;
+}
+
+#goBack {
+    margin-right: 1rem;
+}
+
+/* CSS for Display Change */
+
+
