@@ -24,6 +24,12 @@ quizStartBtn.addEventListener("click",quizStart);
 //Answer Section Elements
 var answersEl = document.getElementById("answers");
 
+//Sounds variables
+
+var good = document.getElementById("good")
+
+var bad = document.getElementById("bad")
+
 //Quiz Question array
 
 var questions = [
@@ -144,13 +150,15 @@ function checkAnswer1(){
         answerStatement = document.createElement("p");
         answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was correct!";
         answersEl.appendChild(answerStatement);
-        answersEl.children[questionIndex].setAttribute("style","color: green")
+        answersEl.children[questionIndex].setAttribute("style","color: green");
+        good.play();
     } else{
         answerStatement = document.createElement("p");
         answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was wrong!";
         answersEl.appendChild(answerStatement);
         timerEl.textContent = timerEl.textContent - 10 ;
-        answersEl.children[questionIndex].setAttribute("style","color: red")
+        answersEl.children[questionIndex].setAttribute("style","color: red");
+        bad.play();
     }
     console.log(answer);
     nextQuestion();    
@@ -162,7 +170,8 @@ function checkAnswer2(){
         answerStatement = document.createElement("p");
         answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was correct!";
         answersEl.appendChild(answerStatement);
-        answersEl.children[questionIndex].setAttribute("style","color: green")
+        answersEl.children[questionIndex].setAttribute("style","color: green");
+        good.play();
         if(questionIndex > 0){
         }
     } else{
@@ -170,7 +179,8 @@ function checkAnswer2(){
         answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was wrong!";
         answersEl.appendChild(answerStatement);
         timerEl.textContent = timerEl.textContent - 10 ;
-        answersEl.children[questionIndex].setAttribute("style","color: red")
+        answersEl.children[questionIndex].setAttribute("style","color: red");
+        bad.play();
     }
     console.log(answer);
     nextQuestion();     
@@ -182,13 +192,15 @@ function checkAnswer3(){
         answerStatement = document.createElement("p");
         answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was correct!";
         answersEl.appendChild(answerStatement);
-        answersEl.children[questionIndex].setAttribute("style","color: green")
+        answersEl.children[questionIndex].setAttribute("style","color: green");
+        good.play();
     } else{
         answerStatement = document.createElement("p");
         answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was wrong!";
         answersEl.appendChild(answerStatement);
         timerEl.textContent = timerEl.textContent - 10 ;
-        answersEl.children[questionIndex].setAttribute("style","color: red")
+        answersEl.children[questionIndex].setAttribute("style","color: red");
+        bad.play();
         }
     console.log(answer);
     nextQuestion();   
@@ -200,13 +212,15 @@ function checkAnswer4(){
         answerStatement = document.createElement("p");
         answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was correct!";
         answersEl.appendChild(answerStatement); 
-        answersEl.children[questionIndex].setAttribute("style","color: green")   
+        answersEl.children[questionIndex].setAttribute("style","color: green");
+        good.play();   
     } else{
         answerStatement = document.createElement("p");
         answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was wrong!";
         answersEl.appendChild(answerStatement);
         timerEl.textContent = timerEl.textContent - 10 ; 
-        answersEl.children[questionIndex].setAttribute("style","color: red") 
+        answersEl.children[questionIndex].setAttribute("style","color: red");
+        bad.play();
     }
     console.log(answer);
     nextQuestion();    
