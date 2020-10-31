@@ -37,30 +37,38 @@ var questions = [
     },
 
     {
-        question: "Inside which",
-        answer1: "a",
-        answer2: "Boolean",
-        answer3: "Numeral",
-        answer4: "Letter",
-        correct: "Letter",
+        question: "Inside which HTML element do we put the JavaScript?",
+        answer1: "<scripting>",
+        answer2: "<script>",
+        answer3: "<javascript>",
+        answer4: "<js>",
+        correct: "<script>",
     },
 
     {
-        question: "Which is not a data type in Javascript",
-        answer1: "b",
-        answer2: "Boolean",
-        answer3: "Numeral",
-        answer4: "Letter",
-        correct: "Letter",
+        question: "What is the correct syntax for referring to an external script called xxx.js?",
+        answer1: "<script src='xx.js'>",
+        answer2: "<script name='xxx.js'>",
+        answer3: "<script href='xxx.js'>",
+        answer4: "<script lnk='xxx.js'>",
+        correct: "<script src='xx.js'>",
     },
 
     {
-        question: "Which is not a data type in Javascript",
-        answer1: "c",
-        answer2: "Boolean",
-        answer3: "Numeral",
-        answer4: "Letter",
-        correct: "Letter",
+        question: "How do you write 'Hello World' in an alert box?",
+        answer1: "msg('Hello World')",
+        answer2: "msgBox('Hello World')",
+        answer3: "alertBox('Hello World')",
+        answer4: "alert('Hello World')",
+        correct: "alert('Hello World')",
+    },
+    {
+        question: "How do you create a function in JavaScript",
+        answer1: "function:myFunction()",
+        answer2: "function = myFunction()",
+        answer3: "function myFunction()",
+        answer4: "function()",
+        correct: "function myFunction()",
     }
 ];
 
