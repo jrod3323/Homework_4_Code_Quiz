@@ -18,8 +18,11 @@ var yourScoreEl = document.getElementById("yourScore");
 var submitScoreBTN = document.getElementById("submitScore");
 var finalScoreEl = document.getElementById("finalScore");
 var goBackBtn = document.getElementById("goBack");
+var inputInitialsFrm = document.getElementById("inputInitials");
 
 quizStartBtn.addEventListener("click",quizStart);
+
+var scores = [];
 
 //Answer Section Elements
 var answersEl = document.getElementById("answers");
@@ -241,3 +244,49 @@ function reload(){
 
 goBackBtn.addEventListener("click",reload)
 
+//storing scores in local storage
+
+//gets previously stored scores
+function getStored(){
+    var storedScores = JSON.parse(localStorage.getItem("scoreEntry"));
+    
+        if(storedScores){
+        scores.push(storedScores);
+        }
+}
+getStored();
+
+//function to add new scores
+function addScore(){
+
+    newScore = {
+        initials : userInitials.value,
+        score : yourScoreEl.innerText,
+    }
+
+    scores.push(newScore)
+    localStorage.setItem("scoreEntry", JSON.stringify(scores))
+};
+
+// runs add score on click of submit
+submitScoreBTN.addEventListener("click", function(event){
+    event.preventDefault();
+    if(userInitials.value){
+        addScore();
+        alert("Your Score Has Been Saved");
+    }else{
+        alert("You must enter your initials!")
+    }
+
+});
+
+//runs add score on press of enter
+ inputInitialsFrm.addEventListener("submit", function(event){
+    event.preventDefault();
+    if(userInitials.value){
+        addScore();
+        alert("Your Score Has Been Saved");
+    }else{
+        alert("You must enter your initials!")
+    }
+});
