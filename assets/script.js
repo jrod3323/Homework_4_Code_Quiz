@@ -249,15 +249,23 @@ goBackBtn.addEventListener("click",reload)
 //gets previously stored scores
 function getStored(){
     var storedScores = JSON.parse(localStorage.getItem("scoreEntry"));
-    
+        scores = [];
+        console.log(storedScores)
         if(storedScores){
-        scores.push(storedScores);
+            for(var i = 0; i<storedScores.length;i++){
+                console.log(storedScores[i]);
+                scores.push(storedScores[i]);
+                console.log(scores);
+            }
         }
+            
 }
 getStored();
 
 //function to add new scores
 function addScore(){
+
+    getStored();
 
     newScore = {
         initials : userInitials.value,
@@ -267,18 +275,6 @@ function addScore(){
     scores.push(newScore)
     localStorage.setItem("scoreEntry", JSON.stringify(scores))
 };
-
-// runs add score on click of submit
-submitScoreBTN.addEventListener("click", function(event){
-    event.preventDefault();
-    if(userInitials.value){
-        addScore();
-        alert("Your Score Has Been Saved");
-    }else{
-        alert("You must enter your initials!")
-    }
-
-});
 
 //runs add score on press of enter
  inputInitialsFrm.addEventListener("submit", function(event){

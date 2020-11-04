@@ -9,7 +9,12 @@ function    renderTable(){
     
 
     var storedScores = JSON.parse(localStorage.getItem("scoreEntry"));
+    console.log(storedScores)
+    var scores = [];
 
+    scores.push(storedScores);
+
+    console.log(scores);
     //checks for old scores and then renders table if there are
     if(storedScores !== null){
         for(var i=0;i<storedScores.length;i++){
