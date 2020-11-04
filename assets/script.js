@@ -12,6 +12,7 @@ var answer2Btn = document.getElementById("answer2");
 var answer3Btn = document.getElementById("answer3");
 var answer4Btn = document.getElementById("answer4");
 var questionEl = document.getElementById("question");
+var answerContainerEl = document.getElementById("answer-container")
 
 // Final Score Sections Elements and Buttons
 var yourScoreEl = document.getElementById("yourScore");
@@ -85,10 +86,8 @@ var questions = [
 var questionIndex = 0;
 
 //listens for click on answer button
-answer1Btn.addEventListener("click",checkAnswer1 );
-answer2Btn.addEventListener("click",checkAnswer2 );
-answer3Btn.addEventListener("click",checkAnswer3 );
-answer4Btn.addEventListener("click",checkAnswer4 );
+
+answerContainerEl.addEventListener("click",checkAnswer)
 
 var buttonClicked = document
 
@@ -147,8 +146,12 @@ function quizStart(){
 
 var answerStatement = "";
 
-function checkAnswer1(){
-    var answer = (answer1Btn.innerText === questions[questionIndex].correct)
+function checkAnswer(event){
+
+    var answerClicked = event.target.id;
+    var answerText = document.getElementById(answerClicked).innerText;
+    console.log(answerText)
+    var answer = (answerText === questions[questionIndex].correct)
     if(answer){
         answerStatement = document.createElement("p");
         answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was correct!";
@@ -160,68 +163,6 @@ function checkAnswer1(){
         answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was wrong!";
         answersEl.appendChild(answerStatement);
         timerEl.textContent = timerEl.textContent - 10 ;
-        answersEl.children[questionIndex].setAttribute("style","color: red");
-        bad.play();
-    }
-    console.log(answer);
-    nextQuestion();    
-}
-
-function checkAnswer2(){
-    var answer = (answer2Btn.innerText === questions[questionIndex].correct)
-    if(answer){
-        answerStatement = document.createElement("p");
-        answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was correct!";
-        answersEl.appendChild(answerStatement);
-        answersEl.children[questionIndex].setAttribute("style","color: green");
-        good.play();
-        if(questionIndex > 0){
-        }
-    } else{
-        answerStatement = document.createElement("p");
-        answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was wrong!";
-        answersEl.appendChild(answerStatement);
-        timerEl.textContent = timerEl.textContent - 10 ;
-        answersEl.children[questionIndex].setAttribute("style","color: red");
-        bad.play();
-    }
-    console.log(answer);
-    nextQuestion();     
-}
-
-function checkAnswer3(){
-    var answer = (answer3Btn.innerText === questions[questionIndex].correct)
-    if(answer){
-        answerStatement = document.createElement("p");
-        answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was correct!";
-        answersEl.appendChild(answerStatement);
-        answersEl.children[questionIndex].setAttribute("style","color: green");
-        good.play();
-    } else{
-        answerStatement = document.createElement("p");
-        answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was wrong!";
-        answersEl.appendChild(answerStatement);
-        timerEl.textContent = timerEl.textContent - 10 ;
-        answersEl.children[questionIndex].setAttribute("style","color: red");
-        bad.play();
-        }
-    console.log(answer);
-    nextQuestion();   
-}
-
-function checkAnswer4(){
-    var answer = (answer4Btn.innerText === questions[questionIndex].correct)
-    if(answer){
-        answerStatement = document.createElement("p");
-        answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was correct!";
-        answersEl.appendChild(answerStatement); 
-        answersEl.children[questionIndex].setAttribute("style","color: green");
-        good.play();   
-    } else{
-        answerStatement = document.createElement("p");
-        answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was wrong!";
-        answersEl.appendChild(answerStatement);
-        timerEl.textContent = timerEl.textContent - 10 ; 
         answersEl.children[questionIndex].setAttribute("style","color: red");
         bad.play();
     }
