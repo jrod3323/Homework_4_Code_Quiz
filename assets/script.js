@@ -149,25 +149,27 @@ var answerStatement = "";
 function checkAnswer(event){
 
     var answerClicked = event.target.id;
-    var answerText = document.getElementById(answerClicked).innerText;
-    console.log(answerText)
-    var answer = (answerText === questions[questionIndex].correct)
-    if(answer){
-        answerStatement = document.createElement("p");
-        answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was correct!";
-        answersEl.appendChild(answerStatement);
-        answersEl.children[questionIndex].setAttribute("style","color: green");
-        good.play();
-    } else{
-        answerStatement = document.createElement("p");
-        answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was wrong!";
-        answersEl.appendChild(answerStatement);
-        timerEl.textContent = timerEl.textContent - 10 ;
-        answersEl.children[questionIndex].setAttribute("style","color: red");
-        bad.play();
+    if(answerClicked === "answer1" || answerClicked === "answer2" || answerClicked === "answer3" || answerClicked === "answer4" ){
+        var answerText = document.getElementById(answerClicked).innerText;
+        console.log(answerText)
+        var answer = (answerText === questions[questionIndex].correct)
+        if(answer){
+            answerStatement = document.createElement("p");
+            answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was correct!";
+            answersEl.appendChild(answerStatement);
+            answersEl.children[questionIndex].setAttribute("style","color: green");
+            good.play();
+        } else{
+            answerStatement = document.createElement("p");
+            answerStatement.textContent = "Your Answer for question "+(questionIndex+1)+" was wrong!";
+            answersEl.appendChild(answerStatement);
+            timerEl.textContent = timerEl.textContent - 10 ;
+            answersEl.children[questionIndex].setAttribute("style","color: red");
+            bad.play();
+        }
+        console.log(answer);
+        nextQuestion(); 
     }
-    console.log(answer);
-    nextQuestion();    
 }
 
 // Function to make previous answer statement disappear
