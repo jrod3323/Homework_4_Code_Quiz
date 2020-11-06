@@ -225,6 +225,7 @@ function addScore(){
     if(userInitials.value){
         addScore();
         alert("Your Score Has Been Saved");
+        location.href = "./pages/highscore.html";
     }else{
         alert("You must enter your initials!")
     }
